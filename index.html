@@ -7,7 +7,63 @@
 </head>
 <body>
 <p>Yo</p>
-<script src="pb1.js"> </script>
+<p> Sum of all values multiples with 3 or 5 up until 1000</p>
+<p id="demo"></p>
 
+<p> Even fibonacci numbers under 2000000</p>
+<p id="demo2"></p>
+
+<p> What is the largest prime factor of the number 600851475143 ?</p>
+<p id="demo3"></p>
+
+<script>
+ function multiple () {
+  var sum = 0
+    for (var i = 0; i < 1000; i++) {
+      if (i % 3 === 0 || i % 5 === 0) {
+        sum += i
+      }
+    }
+    return sum;
+  }
+
+document.getElementById("demo").innerHTML =multiple();
+
+
+var even_fib = function(num) {
+	var curr = 2;
+	var last = 1;
+	var temp = 0;
+	var sum = 0;
+
+	while(curr < num)
+	{
+		if (curr % 2 === 0)
+		{
+			sum += curr;
+		}
+		temp = curr;
+		curr += last;
+		last = temp;
+	}
+	return sum;
+};
+
+document.getElementById("demo2").innerHTML = even_fib(2000000)
+
+
+
+
+var primeFactors = [];
+for (var i = 0; i < 1000; ++i) {
+    if (600851475143 % i === 0) {
+    primeFactors.push(i);
+    }
+}
+var lpf = primeFactors.length;
+
+document.getElementById("demo3").innerHTML = primeFactors[lpf-1]
+
+</script>
 </body>
 </html>
