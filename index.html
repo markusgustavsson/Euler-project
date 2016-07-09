@@ -2,32 +2,22 @@
 <html>
 <head>
 <title>Euler Solitons - by Markus!</title>
-<meta><meta>
-
-</head>
-<body>
-<p>Yo</p>
-<p> Sum of all values multiples with 3 or 5 up until 1000</p>
-<p id="demo"></p>
-
-<p> Even fibonacci numbers under 2000000</p>
-<p id="demo2"></p>
-
-<p> What is the largest prime factor of the number 600851475143 ?</p>
-<p id="demo3"></p>
-
 <script>
- function multiple () {
-  var sum = 0
-    for (var i = 0; i < 1000; i++) {
-      if (i % 3 === 0 || i % 5 === 0) {
-        sum += i
-      }
-    }
-    return sum;
-  }
 
-document.getElementById("demo").innerHTML =multiple();
+var multiple = function(number) {
+var sum = 0
+for (var i = 0; i<number; i++) {
+	if (i%3===0 || i%5 === 0) {
+  	sum += i;
+  } 
+
+}
+return sum;
+
+}
+
+
+
 
 
 var even_fib = function(num) {
@@ -49,7 +39,7 @@ var even_fib = function(num) {
 	return sum;
 };
 
-document.getElementById("demo2").innerHTML = even_fib(2000000)
+
 
 
 
@@ -62,8 +52,42 @@ for (var i = 0; i < 1000; ++i) {
 }
 var lpf = primeFactors.length;
 
-document.getElementById("demo3").innerHTML = primeFactors[lpf-1]
 
 </script>
+
+</head>
+<body>
+<h3>Markus Euler solutions!</h3>
+<p> Sum of all values multiples with 3 or 5 up until 1000</p>
+
+<button onclick="showPb1()">Problem 1 solution</button>
+<p id="demo"></p>
+
+<p> Even fibonacci numbers under 2000000</p>
+
+<button onclick="showPb2()">Problem 2 solution</button>
+<p id="demo2"></p>
+
+<p> What is the largest prime factor of the number 600851475143 ?</p>
+
+<button onclick="showPb3()">Problem 2 solution</button>
+<p id="demo3"></p>
+
+<script>
+function showPb1() {
+document.getElementById("demo").innerHTML =multiple(1000);}
+
+function showPb2() {
+document.getElementById("demo2").innerHTML = even_fib(2000000)}
+
+function showPb3() {
+document.getElementById("demo3").innerHTML = primeFactors[lpf-1]
+}
+
+
+
+
+</script>
+
 </body>
 </html>
